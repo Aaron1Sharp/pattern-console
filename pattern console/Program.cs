@@ -12,6 +12,7 @@ namespace pattern_console
                 choiceOptions();
                 Console.WriteLine("restart ? ok");
                string choise = Console.ReadLine();
+
                 if (choise != "ok")
                 {
                     Console.WriteLine("leave");
