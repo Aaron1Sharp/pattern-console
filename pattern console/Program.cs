@@ -2,6 +2,7 @@
 
 namespace pattern_console
 {
+
     partial class Program
     {
         static void Main(string[] args)
@@ -10,10 +11,9 @@ namespace pattern_console
             {
                 Console.Clear();
                 choiceOptions();
-                Console.WriteLine("restart ? ok");
-               string choise = Console.ReadLine();
 
-                if (choise != "ok")
+                Console.WriteLine("restart ? ok");
+                if (Console.ReadLine() != "ok")
                 {
                     Console.WriteLine("leave");
                     break;
@@ -23,13 +23,36 @@ namespace pattern_console
 
         private static void choiceOptions()
         {
-            byte num = 5;
-            Console.WriteLine("Enter the number you want to work with (Up to 10)!");
-            
-            Console.WriteLine("pattern 35 or 49?");
+                int num = 0;
+                string input;
+                bool whilestop = false;
+
+            while (whilestop != true)
+             {
+
+                Console.WriteLine("insert the number.");
+                input = Console.ReadLine();
+
+                    if (int.TryParse(input, out num) == true)
+                    {
+                        whilestop = true;
+                        Console.WriteLine("Conversion was successful.");
+                        consColor(input);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Conversion failed.");
+                        consColor(input);
+                    }
+             }            
+            Console.WriteLine("pattern 2, 35, 49?");
             string option = Console.ReadLine();
+            consColor(option);
             switch (option)
             {
+                case "2":
+                    Square.pick_Side(num);
+                    break;
                 case "35":
                     Tree._tree(num);
                     break;
@@ -37,9 +60,15 @@ namespace pattern_console
                     InvertedTree._invertedTree(num);
                     break;
                 default:
-                    Console.WriteLine("Error... 35 or 49/");
+                    Console.WriteLine("Error... Try again");
                     break;
             }
+        }
+       static public void consColor(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
+            Console.WriteLine(text);
+            Console.ResetColor();
         }
     }
 }
