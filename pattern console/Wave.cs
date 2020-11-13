@@ -13,7 +13,7 @@ namespace pattern_console
                 {
                     for (int k = 1; k <= wave_height; k++)
                     {
-                        if (i == k || i + k == wave_height + 1) 
+                        if (i == k || i + k == wave_height + 1)
                             Console.Write("<>");                        
                         else
                             Console.Write("  ");                       

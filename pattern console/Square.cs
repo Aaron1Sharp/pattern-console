@@ -10,13 +10,12 @@ namespace pattern_console
             Console.WriteLine("Start with a smaller default, to start with a larger number enter = more " +
                                             "\nsmall-left default\n\t12345\n\t12345\n\t12345\n\t12345\n\t12345");
             string selected = Console.ReadLine();
-            Program.consColor(selected);
-
+           
             if (selected == "more")
             {
                 Console.WriteLine("You chose the more. If you want to start from the top... Enter = top. Default = left");
                 selected = Console.ReadLine();
-                Program.consColor(selected);
+
                 _squareStartWithMore(count, selected);
             }
 
@@ -24,7 +23,7 @@ namespace pattern_console
             {
                 Console.WriteLine("you chose the smallest. If you want to start from the top... Enter = top. Default = left");
                 selected = Console.ReadLine();
-                Program.consColor(selected);
+              
                 _squareStartWithLess(count, selected);
             }
         }
@@ -40,9 +39,9 @@ namespace pattern_console
 
             void larger_Number_On_The_Left()// PATTERN 7                         
             {
-                for (int i = count; i >= 1; i--)
+                for (int i = 1; i <= count; i++)
                 {                                                          
-                    for (int j = count; j >= 1; j--)                                                                
+                    for (int j = 1; j <= count; j++)                                                                
                         Console.Write(j);                       
                             
                     Console.WriteLine();
@@ -51,7 +50,7 @@ namespace pattern_console
 
             void higher_Number_On_Top() //PATTERN 6                          
             {
-                for (int i = count; i >= 1; i--)
+                for (int i = 1; i <= count; i++)
                 {
                     for (int j = 1; j <= count; j++)
                         Console.Write(i);

@@ -12,7 +12,7 @@ namespace pattern_console
             for (int i = 0; i < word.Length; i++)
             {
                 for (int j = 0; j <= i; j++)   
-                    Console.Write(word[j]);
+                    Console.Write(word[i]);
                 
                 Console.WriteLine("...");
             }

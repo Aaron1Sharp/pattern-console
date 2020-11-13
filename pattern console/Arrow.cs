@@ -8,14 +8,13 @@ namespace pattern_console
         {
             Console.WriteLine("turn left? enter = left. Default Right");
             string selected = Console.ReadLine();
-            Program.consColor(selected);
+            Program.color_Output(selected, ConsoleColor.Green);
 
             if (selected == "left")
             {
                 Console.WriteLine("You chose = left");
                 arrowLeft(count);
             }
-
             else
             {
                 Console.WriteLine("you chose = Right");
@@ -25,8 +24,7 @@ namespace pattern_console
 
         static void  arrowRight(int input)
         {
-            //54
-            for (int i = input; i >= -input; i--)
+            for (int i = input; i >= -input; i--)   //54
             {
                 for (int j = 1; j <= Math.Abs(i); j++)
                     Console.Write(" ");
@@ -39,8 +37,7 @@ namespace pattern_console
         }
         static void arrowLeft(int input)
         {
-            //60
-            for (int i = input; i >= -input; i--)
+            for (int i = input; i >= -input; i--)   //60
             {
                 for (int j = input; j >= Math.Abs(i); j--)               
                     Console.Write("*");
